@@ -11,5 +11,5 @@ class Entry(models.Model):
     modified = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return "%s - %s".format(self.title, self.modified)
+        return "{} - {}".format(self.title, self.modified)
 
