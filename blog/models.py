@@ -1,11 +1,12 @@
 from django.db import models
+from autoslug import AutoSlugField
 
 
 # Create your models here.
 class Entry(models.Model):
     title = models.CharField(max_length=140)
     content = models.TextField()
-    slug = models.SlugField(unique=True)
+    slug = AutoSlugField(unique=True, populate_from='title')
     publish = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
