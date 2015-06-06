@@ -1,21 +1,23 @@
 {% extends 'blog/base.html' %}
-
+{% load django_markdown %}
 {% block content  %}
   <h1 class="page-header">
     Entradas
     <small>Lo mejor sobre Django :)</small>
   </h1>
+  {% for article in object_list  %}
   <article class="post">
     <h2>
-      <a href="#">Titulo de Entrada</a></h2>
-      <p><span class="glyphicon glyphicon-time"></span> Fecha de Publicacion</p>
+      <a href="#">{{ article.title }}</a></h2>
+    <p><span class="glyphicon glyphicon-time"></span> {{ article.created  }}</p>
       <hr />
       <img class="img-responsive" src="http://placehold.it/900x300" alt="">
       <p>Contenido de Post</p>
+      {{ article.content|markdown }}
       <a class="btn btn-primary" href="#">Leer mas... <span class="glyphicon glyphicon-chevron-right"></span></a>
     
   </article>
-
+  {% endfor %}
   <ul class="pager">
     <li class="previous">
       <a href="#">&larr; Anteriores</a>
