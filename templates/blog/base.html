@@ -4,9 +4,60 @@
 <head>
   <meta charset="UTF-8">
   <title>Blog Express con Django</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" media="all">
   <link rel="stylesheet" href="{% static 'css/style.css' %}" media="all">
 </head>
 <body>
-  
+  <nav class="navbar navbar-inverse navbar fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Bloggy</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <section class="col-md-8">
+        <h1 class="page-header">
+          Entradas
+          <small>Lo mejor sobre Django :)</small>
+        </h1>
+        <article class="post">
+          <h2>
+            <a href="#">Titulo de Entrada</a></h2>
+            <p><span class="glyphicon glyphicon-time"></span> Fecha de Publicacion</p>
+            <hr />
+            <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+            <p>Contenido de Post</p>
+            <a class="btn btn-primary" href="#">Leer mas... <span class="glyphicon glyphicon-chevron-right"></span></a>
+          
+        </article>
+
+        <ul class="pager">
+          <li class="previous">
+            <a href="#">&larr; Anteriores</a>
+           </li>
+           <li class="next">
+            <a href="#">Recientes &rarr;</a>
+           </li>
+        </ul>
+      </section>
+      <div class="col-md-4">
+        <div class="well">
+          <h4>Blog Search</h4>
+          <div class="input-group">
+            <input class="form-control" type="text">
+            <span class="input-group-btn">
+              <button class="btn btn-default">
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
